@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Building an Open Silicon Pipeline at Northwestern | NUSi</title>
+    <meta name="description" content="A practical project log for making the path from first RTL example to reviewed layout easier for students to follow.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body data-page="blog">
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="../index.html" aria-label="NUSi home">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span><strong>NUSi</strong><small>Northwestern Silicon</small></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span><span></span><span class="sr-only">Menu</span>
+        </button>
+        <div class="nav-links" id="primary-nav">
+          <a data-nav="home" href="../index.html">Home</a>
+          <a data-nav="about" href="../about.html">About Us</a>
+          <a data-nav="blog" href="../blog.html">Blog</a>
+          <a data-nav="contribute" href="../contribute.html">Contribute</a>
+          <a href="https://nusi.gitbook.io/docs" target="_blank" rel="noreferrer">Docs</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <article class="section blog-post">
+        <a class="text-link" href="../blog.html">Back to Blog</a>
+        <div class="tags"><span>rtl</span><span>physical-design</span><span>project-log</span></div>
+        <h1>Building an Open Silicon Pipeline at Northwestern</h1>
+        <p class="post-meta">2026-05-19</p>
+<p>The first goal for NUSi is not to tape out the most complicated chip possible. It is to make the path from idea to layout understandable enough that a new student can walk into a meeting, learn the vocabulary, and find one useful thing to try.</p>
+<h2>Why start with a pipeline?</h2>
+<p>Silicon projects can feel mysterious because the work is split across many tools and phases: RTL, simulation, verification, synthesis, physical design, design-rule checks, and testing.</p>
+<p>A shared pipeline gives the club a common map. People can join at different points without needing to understand every layer on day one.</p>
+<h2>What students can work on</h2>
+<ul><li>Write glossary entries</li><li>Run tiny examples</li><li>Document tool errors</li><li>Own a small block</li><li>Review pull requests</li><li>Help explain timing and layout reports</li></ul>
+<p>The useful work is not only code. It is also making the confusing parts less confusing.</p>
+<pre><code># Example project shape
+designs/
+  counter/
+    rtl/
+    tests/
+    reports/
+docs/
+  getting-started.md
+  tool-setup.md</code></pre>
+<h2>Next steps</h2>
+<p>The next sprint is to choose one tiny design, document every command needed to run it, and write a project page that explains what each artifact means.</p>
+<p>That gives NUSi a repeatable pattern for future RTL, verification, physical design, and fabrication notes.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div><strong>NUSi</strong><p>Northwestern University Silicon Initiative</p></div>
+      <nav aria-label="Footer links">
+        <a class="icon-link" href="https://github.com/" rel="noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.35 1.08 2.92.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.55 9.55 0 0 1 12 6.99c.85 0 1.7.11 2.5.34 1.9-1.29 2.74-1.02 2.74-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+          GitHub
+        </a>
+        <a class="icon-link" href="mailto:gauthamanne2027@u.northwestern.edu" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm8 8.15L4.72 7H4v.52l8 6.77 8-6.77V7h-.72L12 13.15Z"/></svg>
+          Email
+        </a>
+        <a class="icon-link" href="https://discord.gg/kQm5Gr5Q" rel="noreferrer" aria-label="Discord">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.54 5.34A16.9 16.9 0 0 0 15.36 4l-.2.4c1.55.38 2.27.94 2.27.94a13.22 13.22 0 0 0-6.86-.26 11.35 11.35 0 0 0-2 .59c-.32.12-.5.2-.5.2s.75-.6 2.39-.98L10.3 4c-1.48.25-2.9.72-4.2 1.38C3.45 9.31 2.73 13.15 3.09 16.94A16.8 16.8 0 0 0 8.2 19.5l.62-.83a10.75 10.75 0 0 1-1.63-.78l.39-.3c3.14 1.47 6.55 1.47 9.65 0l.4.3c-.52.31-1.06.58-1.64.78l.62.83a16.72 16.72 0 0 0 5.12-2.56c.42-4.39-.7-8.19-2.19-11.6ZM8.88 14.62c-1 0-1.82-.9-1.82-2s.8-2 1.82-2c1.01 0 1.84.9 1.82 2 0 1.1-.81 2-1.82 2Zm6.55 0c-1 0-1.82-.9-1.82-2s.8-2 1.82-2c1.01 0 1.84.9 1.82 2 0 1.1-.8 2-1.82 2Z"/></svg>
+          Discord
+        </a>
+      </nav>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
