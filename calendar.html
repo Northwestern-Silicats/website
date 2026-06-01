@@ -3,21 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Building an Open Silicon Pipeline at Northwestern | NUSi</title>
-    <meta name="description" content="A practical project log for making the path from first RTL example to reviewed layout easier for students to follow.">
+    <title>Calendar | NUSi</title>
+    <meta name="description" content="NUSi calendar for onboarding meetings, events, and project sessions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body data-page="blog">
-
+  <body data-page="calendar">
     <header class="site-header">
       <nav class="navbar" aria-label="Primary navigation">
-        <a class="brand" href="../index.html" aria-label="NUSi home">
+        <a class="brand" href="index.html" aria-label="NUSi home">
           <span class="brand-mark" aria-hidden="true">N</span>
           <span><strong>NUSi</strong><small>Northwestern Silicon</small></span>
         </a>
@@ -25,41 +24,26 @@
           <span></span><span></span><span></span><span class="sr-only">Menu</span>
         </button>
         <div class="nav-links" id="primary-nav">
-          <a data-nav="home" href="../index.html">Home</a>
-          <a data-nav="about" href="../about.html">About Us</a>
-          <a data-nav="blog" href="../blog.html">Blog</a>
-          <a data-nav="contribute" href="../contribute.html">Contribute</a>
-          <a href="https://nusi.gitbook.io/docs" target="_blank" rel="noreferrer">Docs</a>
+          <a data-nav="home" href="index.html">Home</a>
+          <a data-nav="about" href="about.html">About Us</a>
+          <a data-nav="blog" href="blog.html">Blog</a>
+          <a data-nav="contribute" href="contribute.html">Contribute</a>
+          <a data-nav="calendar" href="calendar.html">Calendar</a>
+          <a href="https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13" target="_blank" rel="noreferrer">Docs</a>
         </div>
       </nav>
     </header>
 
     <main>
-      <article class="section blog-post">
-        <a class="text-link" href="../blog.html">Back to Blog</a>
-        <div class="tags"><span>rtl</span><span>physical-design</span><span>project-log</span></div>
-        <h1>Building an Open Silicon Pipeline at Northwestern</h1>
-        <p class="post-meta">2026-05-19</p>
-<p>The first goal for NUSi is not to tape out the most complicated chip possible. It is to make the path from idea to layout understandable enough that a new student can walk into a meeting, learn the vocabulary, and find one useful thing to try.</p>
-<h2>Why start with a pipeline?</h2>
-<p>Silicon projects can feel mysterious because the work is split across many tools and phases: RTL, simulation, verification, synthesis, physical design, design-rule checks, and testing.</p>
-<p>A shared pipeline gives the club a common map. People can join at different points without needing to understand every layer on day one.</p>
-<h2>What students can work on</h2>
-<ul><li>Write glossary entries</li><li>Run tiny examples</li><li>Document tool errors</li><li>Own a small block</li><li>Review pull requests</li><li>Help explain timing and layout reports</li></ul>
-<p>The useful work is not only code. It is also making the confusing parts less confusing.</p>
-<pre><code># Example project shape
-designs/
-  counter/
-    rtl/
-    tests/
-    reports/
-docs/
-  getting-started.md
-  tool-setup.md</code></pre>
-<h2>Next steps</h2>
-<p>The next sprint is to choose one tiny design, document every command needed to run it, and write a project page that explains what each artifact means.</p>
-<p>That gives NUSi a repeatable pattern for future RTL, verification, physical design, and fabrication notes.</p>
-      </article>
+      <section class="section page-hero">
+        <p class="eyebrow">Calendar</p>
+      </section>
+
+      <section class="section calendar-section">
+        <div class="form-embed calendar-embed">
+          <iframe src="https://calendar.google.com/calendar/embed?src=c_624b2ff79b46453589fde62a007a7ba869df67f13d31bd1ee3bf3b4a6ab44674%40group.calendar.google.com&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -79,6 +63,7 @@ docs/
         </a>
       </nav>
     </footer>
-    <script src="../script.js"></script>
+
+    <script src="script.js"></script>
   </body>
 </html>

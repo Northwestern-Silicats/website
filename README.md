@@ -27,16 +27,27 @@ npm run build
 ## Content Structure
 
 - `index.html`: home, hero, division previews, projects, and docs/blog previews
-- `about.html`: mission, what NUSi does, divisions, leadership, and why it exists
-- `contribute.html`: low-pressure ways to attend, learn, write notes, help with lab docs, or join projects
-- `blogs/`: Markdown source files for blog posts
+- `about.html`: mission, teams, advisors, and leadership
+- `contribute.html`: simple start-here form and contact path
+- `blogs/`: Markdown source files for blog posts, organized by author folder
 - `blog.html`: generated blog index
 - `posts/`: generated blog post pages
 - Docs: external GitBook link for the living technical documentation
 
+## Blog Folder Structure
+
+Blog posts are grouped by author/person:
+
+```text
+blogs/admin/hello-world.md
+blogs/gautham-anne-2027/my-post.md
+```
+
+Use `admin` for official/general posts. Use a student folder like `gautham-anne-2027` for posts by Gautham Anne, class of 2027.
+
 ## Add A Blog Post
 
-Create a new Markdown file in `blogs/`, then run `npm run build`.
+Create a new Markdown file inside an author folder in `blogs/`, then run `npm run build`.
 
 Example:
 
@@ -44,7 +55,11 @@ Example:
 ---
 title: What is Physical Design?
 slug: physical-design-intro
-date: 2026-05-19
+author: Gautham Anne
+authorSlug: gautham-anne-2027
+studentEmail: gauthamanne2027@u.northwestern.edu
+date: 2026-05-31
+time: 3:30 PM
 description: A beginner-friendly explanation of placement, routing, and timing.
 tags: [physical-design, tutorials]
 ---
@@ -55,6 +70,7 @@ Write the post here using normal Markdown.
 
 - Bullets work
 - Code blocks work
+- Links work: [NUSi docs](https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13)
 
 ```verilog
 module example;
@@ -63,6 +79,16 @@ endmodule
 ````
 
 The build script regenerates `blog.html` and the matching page in `posts/`.
+
+## Request Form
+
+The Blog page includes a Google Form embed placeholder for people to petition/request blog posts.
+
+Replace `FORM_ID` in `build.js` with the real Google Form ID:
+
+```js
+const blogRequestFormUrl = "https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true";
+```
 
 ## Contact
 
@@ -83,7 +109,7 @@ https://discord.gg/kQm5Gr5Q
 The site currently uses this placeholder:
 
 ```text
-https://nusi.gitbook.io/docs
+https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13
 ```
 
 Replace it in `index.html` and `build.js` once the final NUSi GitBook URL is available.

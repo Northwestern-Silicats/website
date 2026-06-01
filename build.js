@@ -5,8 +5,9 @@ const root = __dirname;
 const blogSourceDir = path.join(root, "blogs");
 const postOutputDir = path.join(root, "posts");
 const email = "gauthamanne2027@u.northwestern.edu";
-const gitbookUrl = "https://nusi.gitbook.io/docs";
+const gitbookUrl = "https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13";
 const discordUrl = "https://discord.gg/kQm5Gr5Q";
+const blogRequestFormUrl = "https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true";
 
 const basePages = ["index.html", "about.html", "contribute.html"];
 const requiredFiles = [...basePages, "styles.css", "script.js"];
@@ -74,6 +75,15 @@ const parseFrontmatter = (raw) => {
   return [meta, body];
 };
 
+const readMarkdownFiles = (dir) => {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) return readMarkdownFiles(fullPath);
+    return entry.isFile() && entry.name.endsWith(".md") ? [fullPath] : [];
+  });
+};
+
 const markdownToHtml = (markdown) => {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const html = [];
@@ -139,7 +149,7 @@ const markdownToHtml = (markdown) => {
       return;
     }
 
-    paragraph.push(escapeHtml(line.trim()));
+    paragraph.push(line.trim());
   });
 
   flushParagraph();
@@ -149,25 +159,30 @@ const markdownToHtml = (markdown) => {
 };
 
 const readBlogs = () =>
-  fs
-    .readdirSync(blogSourceDir)
-    .filter((file) => file.endsWith(".md"))
-    .map((file) => {
-      const raw = fs.readFileSync(path.join(blogSourceDir, file), "utf8");
+  readMarkdownFiles(blogSourceDir)
+    .map((filePath) => {
+      const raw = fs.readFileSync(filePath, "utf8");
       const [meta, body] = parseFrontmatter(raw);
+      const file = path.relative(blogSourceDir, filePath);
+      const authorFolder = file.split(path.sep)[0] || "admin";
       const title = meta.title || path.basename(file, ".md");
       const slug = meta.slug || slugify(title);
+      const authorSlug = meta.authorSlug || authorFolder;
       return {
+        author: meta.author || authorSlug,
+        authorSlug,
         body,
         date: meta.date || "",
         description: meta.description || body.split(/\r?\n/).find((line) => line.trim()) || "",
         file,
+        studentEmail: meta.studentEmail || "",
         slug,
         tags: meta.tags || [],
+        time: meta.time || "",
         title
       };
     })
-    .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    .sort((a, b) => `${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`));
 
 const nav = (prefix = "") => `
     <header class="site-header">
@@ -245,7 +260,12 @@ blogs.forEach((post) => {
         <a class="text-link" href="../blog.html">Back to Blog</a>
         <div class="tags">${post.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
         <h1>${escapeHtml(post.title)}</h1>
-        ${post.date ? `<p class="post-meta">${escapeHtml(post.date)}</p>` : ""}
+        <p class="post-meta">${[
+          post.author ? `By ${escapeHtml(post.author)}` : "",
+          post.studentEmail ? escapeHtml(post.studentEmail) : "",
+          post.date ? `Posted ${escapeHtml(post.date)}` : "",
+          post.time ? `at ${escapeHtml(post.time)}` : ""
+        ].filter(Boolean).join(" · ")}</p>
 ${markdownToHtml(post.body)}
       </article>
     </main>`
@@ -262,6 +282,11 @@ const blogCards =
           <article class="blog-card">
             <div class="tags">${post.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
             <h3>${escapeHtml(post.title)}</h3>
+            <p class="post-meta">${[
+              post.author ? `By ${escapeHtml(post.author)}` : "",
+              post.date ? escapeHtml(post.date) : "",
+              post.time ? escapeHtml(post.time) : ""
+            ].filter(Boolean).join(" · ")}</p>
             <p>${escapeHtml(post.description)}</p>
             <a class="text-link" href="posts/${post.slug}.html">Read post</a>
           </article>`
@@ -284,6 +309,21 @@ fs.writeFileSync(
 
       <section class="section">
         <div class="blog-grid">${blogCards}
+        </div>
+      </section>
+
+      <section class="section blog-request">
+        <div class="section-heading">
+          <p class="eyebrow">Request a post</p>
+          <h2>Petition for a blog topic</h2>
+          <p>Use this embedded Google Form area for topic requests, tutorial ideas, or questions students want answered.</p>
+        </div>
+        <div class="form-embed">
+          <iframe
+            src="${blogRequestFormUrl}"
+            title="NUSi blog post request form"
+            loading="lazy"
+          >Loading...</iframe>
         </div>
       </section>
     </main>`

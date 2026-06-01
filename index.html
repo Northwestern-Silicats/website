@@ -37,7 +37,8 @@
           <a data-nav="about" href="about.html">About Us</a>
           <a data-nav="blog" href="blog.html">Blog</a>
           <a data-nav="contribute" href="contribute.html">Contribute</a>
-          <a href="https://nusi.gitbook.io/docs" target="_blank" rel="noreferrer">Docs</a>
+          <a data-nav="calendar" href="calendar.html">Calendar</a>
+          <a href="https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13" target="_blank" rel="noreferrer">Docs</a>
         </div>
       </nav>
     </header>
@@ -45,44 +46,21 @@
     <main>
       <section class="hero section">
         <div class="hero-copy">
-          <h1>NUSi - Northwestern University Silicon Initiative</h1>
-          <p class="tagline">Student-led silicon design, fabrication, and semiconductor education at Northwestern.</p>
+          <h1 class="hero-title"><span class="hero-title-nusi">NUSi</span> - Northwestern University Silicon Initiative</h1>
+          <p class="tagline">Student-led silicon design and fabrication at Northwestern.</p>
           <p class="hero-text">
             NUSi gives students a practical path into chip design and fabrication, from RTL and verification
             through physical design, cleanroom process development, project documentation, and industry-facing events.
           </p>
           <div class="hero-actions" aria-label="Primary calls to action">
             <a class="button primary" href="contribute.html">Join NUSi</a>
-            <a class="button secondary" href="https://nusi.gitbook.io/docs" target="_blank" rel="noreferrer">Read Docs</a>
-            <a class="button ghost" href="#projects">View Projects</a>
+            <a class="button secondary" href="https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13" target="_blank" rel="noreferrer">Read Docs</a>
           </div>
         </div>
-        <div class="silicon-visual" aria-label="Abstract silicon wafer and chip layout visual" role="img">
-          <div class="wafer">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="chip-map">
-            <div class="core"></div>
-            <div class="trace t1"></div>
-            <div class="trace t2"></div>
-            <div class="trace t3"></div>
-            <div class="trace t4"></div>
-            <div class="block b1"></div>
-            <div class="block b2"></div>
-            <div class="block b3"></div>
-            <div class="block b4"></div>
-          </div>
-          <div class="wildcat-chip-cat" aria-hidden="true">
-            <span class="cat-ear left"></span>
-            <span class="cat-ear right"></span>
-            <span class="cat-face">
-              <span class="cat-eye left"></span>
-              <span class="cat-eye right"></span>
-              <span class="cat-nose"></span>
-            </span>
+        <div class="silicon-visual" aria-label="Stylized silicon wafer with chip pattern" role="img">
+          <div class="wafer-shadow" aria-hidden="true"></div>
+          <div class="wafer-tilt" aria-hidden="true">
+            <div class="wafer-surface"></div>
           </div>
         </div>
       </section>
@@ -90,7 +68,7 @@
       <section class="section feature-grid" aria-labelledby="featured-title">
         <div class="section-heading">
           <p class="eyebrow">What happens here</p>
-          <h2 id="featured-title">From first HDL commit to first wafer run</h2>
+          <h2 id="featured-title">From design to fabrication!</h2>
         </div>
         <article class="feature-card">
           <span class="card-kicker">Design Division</span>
@@ -99,8 +77,8 @@
         </article>
         <article class="feature-card">
           <span class="card-kicker">Fabrication Division</span>
-          <h3>Cleanroom process development</h3>
-          <p>Create SOPs, train students on semiconductor tooling, and connect classroom device physics to real fabrication practice.</p>
+          <h3>Design Fabrication Equipment</h3>
+          <p>Develop semiconductor tooling and connect classroom device physics to fabrication practices.</p>
         </article>
         <article class="feature-card">
           <span class="card-kicker">ChipChats</span>
@@ -109,43 +87,22 @@
         </article>
         <article class="feature-card" id="projects">
           <span class="card-kicker">Open Projects</span>
-          <h3>Join a live technical track</h3>
+          <h3>Join or propose a project</h3>
           <p>Contribute to tutorials, emulation rigs, physical design experiments, fabrication notes, and student-led silicon project logs.</p>
         </article>
       </section>
 
-      <section class="section preview-band" aria-labelledby="preview-title">
-        <div>
-          <p class="eyebrow">Featured docs and logs</p>
-          <h2 id="preview-title">Technical writing that makes the stack approachable</h2>
-        </div>
-        <div class="preview-list">
-          <a href="https://nusi.gitbook.io/docs" target="_blank" rel="noreferrer">
-            <strong>Getting Started</strong>
-            <span>Tool setup, vocabulary, and how to join a project.</span>
-          </a>
-          <a href="posts/open-silicon-pipeline.html">
-            <strong>Open Silicon Pipeline</strong>
-            <span>A running project log for design-to-fabrication workflows.</span>
-          </a>
-          <a href="https://nusi.gitbook.io/docs" target="_blank" rel="noreferrer">
-            <strong>Fabrication SOPs</strong>
-            <span>Safety-minded references for cleanroom training sprints.</span>
-          </a>
-        </div>
-      </section>
-
       <section class="docs section" id="docs">
         <div class="docs-link-card">
-          <div>
+          <div class="docs-copy">
             <p class="eyebrow">Docs</p>
-            <h2>Read the NUSi technical docs on GitBook</h2>
+            <h2>Read the NUSi technical docs</h2>
             <p>
-              The living docs belong in GitBook, where NUSi can maintain getting-started guides,
+              The living docs are on our docs page, where NUSi can maintain getting-started guides,
               RTL notes, verification references, physical design workflows, fabrication SOPs, and tool setup pages.
             </p>
+            <a class="button primary" href="https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13" target="_blank" rel="noreferrer">Open Docs</a>
           </div>
-          <a class="button primary" href="https://nusi.gitbook.io/docs" target="_blank" rel="noreferrer">Open GitBook</a>
           <div class="docs-categories" aria-label="Docs categories">
             <span>Getting Started</span>
             <span>RTL Design</span>

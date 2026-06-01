@@ -3,20 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contribute | NUSi</title>
-    <meta name="description" content="Contribute to NUSi projects, docs, fabrication SOPs, workshops, mentoring, or sponsorship.">
+    <title>Hello World | NUSi</title>
+    <meta name="description" content="A first NUSi blog post showing the basic blog structure, metadata, links, code, embeds, and what future posts can cover.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
     >
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
   </head>
-  <body data-page="contribute">
+  <body data-page="blog">
+
     <header class="site-header">
       <nav class="navbar" aria-label="Primary navigation">
-        <a class="brand" href="index.html" aria-label="NUSi home">
+        <a class="brand" href="../index.html" aria-label="NUSi home">
           <span class="brand-mark" aria-hidden="true">N</span>
           <span><strong>NUSi</strong><small>Northwestern Silicon</small></span>
         </a>
@@ -24,50 +25,57 @@
           <span></span><span></span><span></span><span class="sr-only">Menu</span>
         </button>
         <div class="nav-links" id="primary-nav">
-          <a data-nav="home" href="index.html">Home</a>
-          <a data-nav="about" href="about.html">About Us</a>
-          <a data-nav="blog" href="blog.html">Blog</a>
-          <a data-nav="contribute" href="contribute.html">Contribute</a>
-          <a data-nav="calendar" href="calendar.html">Calendar</a>
+          <a data-nav="home" href="../index.html">Home</a>
+          <a data-nav="about" href="../about.html">About Us</a>
+          <a data-nav="blog" href="../blog.html">Blog</a>
+          <a data-nav="contribute" href="../contribute.html">Contribute</a>
+          <a data-nav="calendar" href="../calendar.html">Calendar</a>
           <a href="https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13" target="_blank" rel="noreferrer">Docs</a>
         </div>
       </nav>
     </header>
 
     <main>
-      <section class="section page-hero">
-        <p class="eyebrow">Contribute</p>
-        <h1>Join the community and contribute in public.</h1>
-        <p>Everything we do is open-source by default: discussions happen openly, and project work is tracked in shared repositories.</p>
-      </section>
-
-      <section class="section two-column contribute">
-        <div class="section-heading sticky-note">
-          <p class="eyebrow">Where to contribute</p>
-          <h2>Two places to get involved</h2>
-          <p>Join open discussions on Discord and ship changes through the GitHub organization.</p>
-        </div>
-        <div class="stack" aria-label="Contribution channels">
-          <article class="content-panel">
-            <h3>Discord</h3>
-            <p>
-              Discord is the open community space for questions, design reviews, onboarding, and project coordination.
-              It is open-source friendly because decisions, support, and technical context are shared publicly so new
-              contributors can follow the work and participate.
-            </p>
-            <a class="text-link" href="https://discord.gg/kQm5Gr5Q" rel="noreferrer" target="_blank">Join Discord</a>
-          </article>
-          <article class="content-panel">
-            <h3>GitHub Organization</h3>
-            <p>
-              The GitHub organization is where code, docs, issues, and pull requests live.
-              To get access to edit the GitHub repositories, see our Calendar page and join the next onboarding meeting.
-            </p>
-            <a class="text-link" href="https://github.com/" rel="noreferrer" target="_blank">View GitHub Organization</a>
-            <a class="text-link" href="calendar.html">See Calendar Page</a>
-          </article>
-        </div>
-      </section>
+      <article class="section blog-post">
+        <a class="text-link" href="../blog.html">Back to Blog</a>
+        <div class="tags"><span>hello-world</span><span>tutorials</span><span>blog</span></div>
+        <h1>Hello World</h1>
+        <p class="post-meta">By Admin · gauthamanne2027@u.northwestern.edu · Posted 2026-05-31 · at 12:00 PM</p>
+<p>Welcome to the NUSi blog.</p>
+<p>This post is a small example of what a blog post can look like. Posts can be project updates, fabrication notes, workshop recaps, RTL tutorials, physical design explanations, event summaries, or informal logs from students learning something new.</p>
+<h2>Basic structure</h2>
+<p>Every blog post lives in the <code>blogs/</code> folder and starts with metadata at the top. That metadata tells the website how to display the post card and post header.</p>
+<pre><code>---
+title: Hello World
+slug: hello-world
+author: Admin
+authorSlug: admin
+studentEmail: gauthamanne2027@u.northwestern.edu
+date: 2026-05-31
+time: 12:00 PM
+description: A short summary for the blog card.
+tags: [hello-world, tutorials, blog]
+---</code></pre>
+<h2>Links</h2>
+<p>You can add links using normal Markdown:</p>
+<p><a href="https://www.notion.so/NU-Silicats-Home-Page-36e5a0f25039809ca74ffc2a3d6578ed?pvs=13">Visit the NUSi docs</a></p>
+<h2>Code blocks</h2>
+<p>Use fenced code blocks for snippets, commands, RTL, or setup instructions.</p>
+<pre><code>module hello_world;
+  initial begin
+    $display(&quot;hello world&quot;);
+  end
+endmodule</code></pre>
+<h2>Embedded files and media</h2>
+<p>For images, put the file somewhere the site can serve, then reference it in Markdown:</p>
+<pre><code>![A chip layout diagram](../assets/example-layout.png)</code></pre>
+<p>For downloadable files, link to them directly:</p>
+<pre><code>[Download the lab notes](../assets/lab-notes.pdf)</code></pre>
+<h2>What blogs can be about</h2>
+<ul><li>Project logs from design, verification, physical design, or fabrication</li><li>Tutorials for tools, concepts, or workflows</li><li>ChipChat recaps and speaker notes</li><li>Fabrication process notes and equipment updates</li><li>Student reflections on learning silicon</li><li>Calls for help on open tasks</li></ul>
+<h2>Request a post</h2>
+<p>Use the form on the Blog page to suggest a topic or petition for a post. Good requests include what you want explained, what level you want it at, and whether you want a tutorial, recap, or project log.</p>
+      </article>
     </main>
 
     <footer class="site-footer">
@@ -87,7 +95,6 @@
         </a>
       </nav>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>
