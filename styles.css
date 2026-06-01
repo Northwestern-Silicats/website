@@ -273,6 +273,7 @@ h3 {
 .wafer-surface {
   width: 100%;
   height: 100%;
+  background-color: #d9c8ee;
   background:
     radial-gradient(circle at 18% 22%, rgba(255, 241, 148, 0.92) 0%, rgba(255, 241, 148, 0) 30%),
     radial-gradient(circle at 80% 62%, rgba(178, 151, 232, 0.45) 0%, rgba(178, 151, 232, 0) 38%),
@@ -803,6 +804,8 @@ select {
 }
 
 .form-embed {
+  width: min(100%, 980px);
+  margin: 0 auto;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
